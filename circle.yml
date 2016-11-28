@@ -1,4 +1,5 @@
 machine:
+  environment:
   timezone:
     Asia/Tokyo
   node:
@@ -7,6 +8,8 @@ machine:
 dependencies:
   override:
     - npm install
+    - git config --global user.email "$GH_EMAIL"
+    - git config --global user.name "$GH_NAME"
 
 deployment:
   production:
