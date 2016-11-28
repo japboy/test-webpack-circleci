@@ -21,3 +21,4 @@ deployment:
       - git config --global user.name "$GH_NAME"
       - git add ./docs
       - git commit -m 'Build'
+      - git push origin master
