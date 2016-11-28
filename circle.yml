@@ -1,0 +1,18 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  node:
+    version: 6.9.1
+
+dependencies:
+  override:
+    - npm install
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run clean
+      - npm run build
+      - git add ./docs
+      - git commit -m 'Build'
