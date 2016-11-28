@@ -1,5 +1,7 @@
 machine:
   environment:
+    GH_EMAIL: lagfer@youck.org
+    GH_NAME: Yu I.
   timezone:
     Asia/Tokyo
   node:
@@ -8,8 +10,6 @@ machine:
 dependencies:
   override:
     - npm install
-    - git config --global user.email "$GH_EMAIL"
-    - git config --global user.name "$GH_NAME"
 
 deployment:
   production:
@@ -17,5 +17,7 @@ deployment:
     commands:
       - npm run clean
       - npm run build
+      - git config --global user.email "$GH_EMAIL"
+      - git config --global user.name "$GH_NAME"
       - git add ./docs
       - git commit -m 'Build'
